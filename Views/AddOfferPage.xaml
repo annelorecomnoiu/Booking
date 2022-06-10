@@ -1,0 +1,38 @@
+﻿<Window x:Class="booking.Views.AddOfferPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:booking.ViewModels"
+        mc:Ignorable="d"
+        Title="Add Offer" Height="465" Width="315" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:AddOfferViewModel/>
+    </Window.DataContext>
+    <Grid Background="Turquoise">
+        <TextBlock HorizontalAlignment="Left" Margin="40,25,0,0" Text="Nume oferta:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="125,25,0,0" Text="{Binding OfferName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="40,65,0,0" Text="Pret:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox Name="NumarCamere" HorizontalAlignment="Left" Margin="125,65,0,0" Text="{Binding PriceValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="40,105,0,0" Text="Camera:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="125,105,0,0" VerticalAlignment="Top" Width="150" ItemsSource="{Binding Camere}" SelectedValue="{Binding SelectedCamera,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="40,145,0,0" Text="Data inceput:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="125,145,0,0" VerticalAlignment="Top" Width="150" SelectedDate="{Binding StartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="40,185,0,0" Text="Data sfarsit:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="125,185,0,0" VerticalAlignment="Top" Width="150" SelectedDate="{Binding EndDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="40,230,0,0" Text="Servicii posibile:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="130,230,0,0" VerticalAlignment="Top" Width="150" ItemsSource="{Binding ServiciiOferta, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding CurrentNewService, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Content="Adauga serviciu" HorizontalAlignment="Left" Margin="155,273,0,0" VerticalAlignment="Top" Width="100" Command="{Binding Path=AddService}" Background="White"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="40,315,0,0" Text="Servicii selectate:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="135,315,0,0" VerticalAlignment="Top" Width="150" ItemsSource="{Binding ServiciiAdaugate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding CurrentAddedService,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Content="Sterge serviciu" HorizontalAlignment="Left" Margin="155,357,0,0" VerticalAlignment="Top" Width="100" Command="{Binding Path=RemoveService}" Background="White"/>
+
+        <Button Content="Adauga oferta" HorizontalAlignment="Left" Margin="155,406,0,0" VerticalAlignment="Top" Width="100" Click="AddOffer_Click" Command="{Binding Path=AddOffer}" Background="White"/>
+    </Grid>
+</Window>

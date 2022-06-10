@@ -1,0 +1,28 @@
+﻿<Window x:Class="booking.Views.AddPricePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:booking.ViewModels"
+        mc:Ignorable="d"
+        Title="Add Price" Height="300" Width="300" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:AddPriceViewModel/>
+    </Window.DataContext>
+    <Grid Background="Turquoise">
+        <TextBlock HorizontalAlignment="Left" Margin="40,25,0,0" Text="Camera:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="125,25,0,0" VerticalAlignment="Top" Width="150" ItemsSource="{Binding Camere}" SelectedValue="{Binding SelectedCamera,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="40,65,0,0" Text="Data start:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="125,60,0,0" VerticalAlignment="Top" SelectedDate="{Binding StartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="40,105,0,0" Text="Data end:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="125,100,0,0" VerticalAlignment="Top" SelectedDate="{Binding EndDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="40,145,0,0" Text="Valoare:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="125,145,0,0" Text="{Binding PriceValue, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+
+        <Button Content="Adauga pret" HorizontalAlignment="Left" Margin="150,214,0,0" VerticalAlignment="Top" Width="100" Command="{Binding Path=AddNewPrice}" Click="AddPrice_Click" Background="White"/>
+
+    </Grid>
+</Window>

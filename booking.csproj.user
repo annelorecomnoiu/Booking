@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Components\BindablePasswordBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddOfferPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddPricePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddRezervationPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddRoomPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ClientPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EmployeePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\GuestPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RegisterPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RemoveOfferPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RemovePricePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\RemoveRoomPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UpdateRoomPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ViewAllRezervationsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ViewOffersPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ViewRezervationsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ViewRoomsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ViewServicesPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Components\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddOfferPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddPricePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddRezervationPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddRoomPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ClientPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EmployeePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\GuestPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RegisterPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RemoveOfferPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RemovePricePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RemoveRoomPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UpdateRoomPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewAllRezervationsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewOffersPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewRezervationsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewRoomsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewServicesPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

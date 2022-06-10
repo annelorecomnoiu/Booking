@@ -1,0 +1,65 @@
+﻿<Window x:Class="booking.Views.AdminPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:booking.ViewModels"
+        mc:Ignorable="d"
+        Title="Admin Page" Height="450" Width="800" WindowState="Maximized">
+    <Window.DataContext>
+        <local:AdminPageViewModel/>
+    </Window.DataContext>
+    <Grid>
+
+        <StackPanel>
+            <Image Source="C:\Users\User\Desktop\booking\Images\hotel2.jpg"></Image>
+
+        </StackPanel>
+
+        <StackPanel Margin="0,0,-0.4,0" RenderTransformOrigin="0.506,0.497" Grid.RowSpan="3" >
+            <Menu IsMainMenu="True" Background="Turquoise"  Height="25" Margin="0,0,-0.4,0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                <MenuItem Header="Dotari" FontFamily ="Comic Sans MS Bold"  Height="25" >
+                    <MenuItem  Header="Adauga dotare" Command="{Binding Path=AddFeature}" />
+                    <Separator />
+                    <MenuItem Header="Sterge dotare" Command="{Binding Path=RemoveFeature}" />
+                </MenuItem>
+
+                <MenuItem Header="Camere" FontFamily ="Comic Sans MS Bold"  Height="25" >
+                    <MenuItem  Header="Adauga camera" Command="{Binding Path=AddRoom}" />
+                    <Separator />
+                   
+                    <MenuItem Header="Sterge camera" Command="{Binding Path=RemoveRoom}" />
+                </MenuItem>
+
+                <MenuItem Header="Servicii" FontFamily ="Comic Sans MS Bold"  Height="25" >
+                    <MenuItem  Header="Adauga serviciu" Command="{Binding Path=AddService}" />
+                    <Separator/>
+                    <MenuItem Header="Vizualizare servicii" Command="{Binding Path=ViewServices}"/>
+                    <Separator />
+                    <MenuItem Header="Sterge serviciu" Command="{Binding Path=RemoveService}" />
+                    
+                </MenuItem>
+
+                <MenuItem Header="Oferte" FontFamily ="Comic Sans MS Bold"  Height="25" >
+                    <MenuItem  Header="Adauga oferta" Command="{Binding Path=AddOffer}" />
+                    
+                    <Separator/>
+                    <MenuItem Header="Vizualizare oferte" Command="{Binding Path=ViewOffers}"/>
+                    <Separator />
+                    <MenuItem Header="Sterge oferta" Command="{Binding Path=RemoveOffer}" />
+                    
+                </MenuItem>
+
+                <MenuItem Header="Preturi" FontFamily ="Comic Sans MS Bold"  Height="25" >
+                    <MenuItem  Header="Adauga pret" Command="{Binding Path=AddPrice}" />
+                   
+                    <Separator />
+                    <MenuItem Header="Sterge pret" Command="{Binding Path=RemovePrice}" />
+                </MenuItem>
+
+            </Menu>
+        </StackPanel>
+        <Button Content="Deconectare" Width="250" Height="70" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Background="Turquoise" FontFamily="Trebuchet MS" FontSize="22" FontWeight="Bold" Click="Button_Click"/>
+        <TextBlock Text="   Admin mode" TextWrapping="Wrap" FontWeight="Bold" FontSize="36" Width="252" Margin="-389,53,937,321" FontFamily="Trebuchet MS"/>
+    </Grid>
+</Window>

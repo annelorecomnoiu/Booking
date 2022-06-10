@@ -1,0 +1,45 @@
+﻿<Window x:Class="booking.Views.UpdateRoomPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:booking.ViewModels"
+        mc:Ignorable="d"
+        Title="Add Room" Height="550" Width="300" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:UpdateRoomViewModel/>
+    </Window.DataContext>
+    <Grid Background="Turquoise">
+        <ComboBox HorizontalAlignment="Left" Margin="125,24,0,0" VerticalAlignment="Top" Width="150" ItemsSource="{Binding Camere}" SelectedItem="{Binding SelectedCamera}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="32,24,0,0" Text="Alege camera:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="40,65,0,0" Text="Nr camere:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox Name="NumarCamere" HorizontalAlignment="Left" Margin="125,65,0,0" Text="{Binding NumarCamere, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="NrCamere_TextChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="40,105,0,0" Text="Capacitate:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="125,105,0,0" VerticalAlignment="Top" Width="150" SelectedValue="{Binding Capacitate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="40,145,0,0" Text="Imagini camera:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button Content="Adauga imagini" HorizontalAlignment="Left" Margin="135,145,0,0" VerticalAlignment="Top" Width="100" Command="{Binding Path=AddImage}" Background="White"/>
+
+        <Image HorizontalAlignment="Left" Height="100" Margin="100,175,0,0" VerticalAlignment="Top" Width="100" Source="{Binding CurrentImagePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Content="Previous image" HorizontalAlignment="Left" Margin="40,285,0,0" VerticalAlignment="Top" Width="100" Command="{Binding Path=PreviousImage}" Background="White"/>
+        <Button Content="Next image" HorizontalAlignment="Right" Margin="0,285,40,0" VerticalAlignment="Top" Width="100" Command="{Binding Path=NextImage}" Background="White"/>
+
+
+        <TextBlock HorizontalAlignment="Left" Margin="40,325,0,0" Text="Dotari camera:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="125,325,0,0" VerticalAlignment="Top" Width="150" ItemsSource="{Binding Dotari, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding CurrentNewFeature, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Content="Adauga dotare" HorizontalAlignment="Left" Margin="150,352,0,0" VerticalAlignment="Top" Width="100" Command="{Binding Path=AddFeature}" Background="White"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="40,400,0,0" Text="Dotari selectate:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="130,400,0,0" VerticalAlignment="Top" Width="150" ItemsSource="{Binding DotariAdaugate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding CurrentAddedFeature,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Content="Sterge dotare" HorizontalAlignment="Left" Margin="150,450,0,0" VerticalAlignment="Top" Width="100" Command="{Binding Path=RemoveFeature}" Background="White"/>
+
+        <Button Content="Adauga camera" HorizontalAlignment="Left" Margin="150,488,0,0" VerticalAlignment="Top" Width="100" Command="{Binding Path=UpdateRoom}" Background="White"/>
+
+    </Grid>
+</Window>

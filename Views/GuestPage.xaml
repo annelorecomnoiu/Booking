@@ -1,0 +1,28 @@
+﻿<Window x:Class="booking.Views.GuestPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:booking.ViewModels"
+        mc:Ignorable="d"
+        Title="Guest Page" Height="450" Width="800" WindowState="Maximized">
+    <Window.DataContext>
+        <local:GuestPageViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <StackPanel>
+            <Image Source="C:\Users\User\Desktop\booking\Images\hotel2.jpg"></Image>
+
+        </StackPanel>
+
+        <StackPanel Margin="0,0,-0.4,0" RenderTransformOrigin="0.506,0.497" Grid.RowSpan="3" >
+            <Menu IsMainMenu="True" Background="Turquoise"  Height="25" Margin="0,0,-0.4,0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                <MenuItem Header="Camere" FontFamily ="Comic Sans MS Bold"  Height="25" >
+                    <MenuItem  Header="Tipuri de camere" Command="{Binding Path=ViewRooms}" />
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+        <Button Content="Inapoi la conectare" Width="250" Height="70" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Background="Turquoise" FontFamily="Trebuchet MS" FontSize="22" FontWeight="Bold" Click="Button_Click"/>
+        <TextBlock Text="   Guest mode" TextWrapping="Wrap" FontWeight="Bold" FontSize="36" Width="252" Margin="-389,53,937,321" FontFamily="Trebuchet MS"/>
+    </Grid>
+</Window>

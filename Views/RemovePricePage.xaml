@@ -1,0 +1,30 @@
+﻿<Window x:Class="booking.Views.RemovePricePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:booking.ViewModels"
+        mc:Ignorable="d"
+        Title="RemovePricePage" Height="300" Width="300" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:RemovePriceViewModel/>
+    </Window.DataContext>
+    <Grid Background="Turquoise">
+        <ComboBox HorizontalAlignment="Left" Margin="121,47,0,0" VerticalAlignment="Top" Width="150" ItemsSource="{Binding Preturi}" SelectedItem="{Binding SelectedPret}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,50,0,0" Text="Alege pretul:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="20,80,0,0" Text="Nume camera:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,80,0,0" Text="{Binding RoomName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="20,110,0,0" Text="Data start:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,110,0,0" Text="{Binding DateStart,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="20,140,0,0" Text="Data end:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,140,0,0" Text="{Binding DateEnd,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="20,170,0,0" Text="Pret:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,170,0,0" Text="{Binding PriceValue,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+        <Button Content="Sterge pret" HorizontalAlignment="Left" Margin="121,228,0,0" VerticalAlignment="Top" Width="150" Click="RemovePrice_Click" Command="{Binding Path=RemovePrice}" Background="White"/>
+    </Grid>
+</Window>
